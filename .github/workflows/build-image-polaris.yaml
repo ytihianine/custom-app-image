@@ -24,9 +24,9 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build Docker image
-        run: docker build -f Dockerfile
-          -t $IMAGE_NAME:latest .
+        run: docker build -f apache_polaris.Dockerfile
+          -t $IMAGE_NAME:${GITHUB_SHA::7} .
 
       - name: Push Docker image
         if: github.ref == 'refs/heads/main'
-        run: docker push $IMAGE_NAME:latest
+        run: docker push $IMAGE_NAME:${GITHUB_SHA::7}
