@@ -1,13 +1,10 @@
 name: Build and Push custom apache polaris image
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: ghcr.io/${{ github.repository }}
+  IMAGE_NAME: ${{ github.repository_owner }}/apache-polaris-custom
 
 jobs:
   build-and-push:
