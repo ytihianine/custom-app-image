@@ -1,0 +1,6 @@
+flask-cors
+psycopg2-binary==2.9.11
+openpyxl==3.1.5
+duckdb==1.5.0
+trino==0.337.0
+shillelagh==1.4.3
