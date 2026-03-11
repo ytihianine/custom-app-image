@@ -1,11 +1,11 @@
-name: Build and Push custom apache polaris image
+name: Build and Push custom Apache Superset image
 
 on:
   workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/apache-polaris-custom
+  IMAGE_NAME: ${{ github.repository_owner }}/apache-superset-custom
 
 jobs:
   build-and-push:
