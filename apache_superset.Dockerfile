@@ -27,6 +27,7 @@ WORKDIR /app
 
 # Import Superset custom folder
 COPY superset-dsfr ./superset-custom/
+COPY customCA.crt  ./customCA.crt
 
 # Download DSFR only if USE_DSFR=true
 RUN if [ "$USE_DSFR" = "true" ]; then \
@@ -140,5 +141,9 @@ RUN set -eux; \
     else \
         pip install --no-cache-dir -r /tmp/superset-custom/docker/requirements-local.txt; \
     fi
+
+# Add custom CA certificate -- Nubonyxia context
+COPY --from=custom_image /app/customCA.crt /usr/local/share/ca-certificates/customCA.crt
+RUN update-ca-certificates
 
 USER superset
