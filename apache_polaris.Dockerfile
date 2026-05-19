@@ -1,4 +1,4 @@
-FROM apache/polaris:1.3.0
+FROM apache/polaris:1.5.0
 
 USER root
 
