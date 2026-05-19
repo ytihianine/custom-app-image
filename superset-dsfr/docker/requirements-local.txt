@@ -1,6 +1,6 @@
 flask-cors
-psycopg2-binary==2.9.11
+psycopg2-binary==2.9.12
 openpyxl==3.1.5
-duckdb==1.5.0
+duckdb==1.5.2
 trino==0.337.0
-shillelagh==1.4.3
+shillelagh==1.4.4
