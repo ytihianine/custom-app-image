@@ -34,7 +34,7 @@ x-superset-volumes:
 
 services:
   redis:
-    image: redis:7
+    image: redis:8
     container_name: superset_cache
     restart: unless-stopped
     volumes:
@@ -46,7 +46,7 @@ services:
         required: true
       - path: docker/.env-local # optional override
         required: false
-    image: postgres:15
+    image: postgres:18
     container_name: superset_db
     restart: unless-stopped
     volumes:
